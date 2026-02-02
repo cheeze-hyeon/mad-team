@@ -1,0 +1,45 @@
+/* 사이드바 에이전트 패널 (light DOM — 드래그가 노션 블록까지 나가도록) */
+#mad-sidebar {
+  box-sizing: border-box;
+  position: fixed;
+  top: 80px;
+  right: 0;
+  width: 56px;
+  height: auto;
+  max-height: calc(100vh - 120px);
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-right: none;
+  border-radius: 12px 0 0 12px;
+  box-shadow: -2px 2px 12px rgba(0,0,0,0.06);
+  z-index: 9998;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 0;
+  gap: 4px;
+}
+
+.mad-agent-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  font-size: 18px;
+  font-weight: bold;
+  background: #3f51b5;
+  color: #fff;
+  border: 2px solid transparent;
+  user-select: none;
+}
+
+.mad-agent-icon:hover {
+  background: #303f9f;
+}
+
+.mad-agent-icon:active {
+  cursor: grabbing;
+}

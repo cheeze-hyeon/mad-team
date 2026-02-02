@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "MAD-Notion-PoC",
+  "version": "1.0",
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.notion.so/*"],
+      "js": ["content.js"],
+      "css": ["style.css"]
+    }
+  ]
+}
