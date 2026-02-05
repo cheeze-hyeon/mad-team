@@ -136,13 +136,18 @@ document.body.appendChild(host);
 const MAD_DRAG_TYPE = 'application/x-mad-agent';
 
 sidebar.querySelectorAll('.mad-agent-icon').forEach((el) => {
-  el.addEventListener('dragstart', (e) => {
-    const data = JSON.stringify({ agentId: el.dataset.agentId });
-    e.dataTransfer.setData(MAD_DRAG_TYPE, data);
-    e.dataTransfer.setData('text/plain', data);
-    e.dataTransfer.effectAllowed = 'copy';
-    e.dataTransfer.setDragImage(el, 20, 20);
-  });
+  el.addEventListener(
+    'dragstart',
+    (e) => {
+      e.stopPropagation();
+      const data = JSON.stringify({ agentId: el.dataset.agentId });
+      e.dataTransfer.setData(MAD_DRAG_TYPE, data);
+      e.dataTransfer.setData('text/plain', data);
+      e.dataTransfer.effectAllowed = 'copy';
+      e.dataTransfer.setDragImage(el, 20, 20);
+    },
+    true
+  );
 });
 
 document.addEventListener(
